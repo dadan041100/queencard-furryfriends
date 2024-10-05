@@ -19,9 +19,9 @@
 -- Current Database: `furry_friends_db`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `furry_friends_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `qcard_furryfriends_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
-USE `furry_friends_db`;
+USE `qcard_furryfriends_db`;
 
 --
 -- Table structure for table `cat`
@@ -73,6 +73,71 @@ LOCK TABLES `dog` WRITE;
 /*!40000 ALTER TABLE `dog` DISABLE KEYS */;
 INSERT INTO `dog` VALUES (1,'Golden Retriever',1),(2,'Labrador Retriever',0),(3,'Beagle',1),(4,'Poodle',1),(5,'Bulldog',0);
 /*!40000 ALTER TABLE `dog` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bird`
+--
+
+-- Drop table if it exists
+DROP TABLE IF EXISTS `bird`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `bird` (
+                        `id` bigint NOT NULL,
+                        `color` varchar(255) DEFAULT NULL,
+                        `species` varchar(255) DEFAULT NULL,
+                        `flying` tinyint(1) DEFAULT NULL,
+                        PRIMARY KEY (`id`),
+                        CONSTRAINT `bird_ibfk_1` FOREIGN KEY (`id`) REFERENCES `pet` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- Dumping data for table `bird`
+LOCK TABLES `bird` WRITE;
+/*!40000 ALTER TABLE `bird` DISABLE KEYS */;
+INSERT INTO `bird` VALUES
+                       (11, 'white', 'Parrot', 1),
+                       (12, 'black', 'Canary', 0),
+                       (13, 'red', 'Sparrow', 1),
+                       (14, 'Brown', 'Eagle', 1),
+                       (15, 'Grey', 'Hawk', 1);
+/*!40000 ALTER TABLE `bird` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+--
+-- Table structure for table `ferret`
+--
+
+-- Drop table if it exists
+DROP TABLE IF EXISTS `ferret`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ferret` (
+                          `id` bigint NOT NULL,
+                          `size` varchar(255) DEFAULT NULL,
+                          `trained` tinyint(1) DEFAULT NULL,
+                          PRIMARY KEY (`id`),
+                          CONSTRAINT `ferret_ibfk_1` FOREIGN KEY (`id`) REFERENCES `pet` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ferret`
+--
+
+
+LOCK TABLES `ferret` WRITE;
+/*!40000 ALTER TABLE `ferret` DISABLE KEYS */;
+INSERT INTO `ferret` VALUES
+                         (16, 'Small', 0),
+                         (17, 'Chonky', 1),
+                         (18, 'XSmall', 1),
+                         (19, 'Large', 0),
+                         (20, 'Medium', 1);
+/*!40000 ALTER TABLE `ferret` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

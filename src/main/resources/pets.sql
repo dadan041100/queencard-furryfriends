@@ -2,9 +2,9 @@
 
 -- noinspection SqlNoDataSourceInspectionForFile
 
-create database furry_friends_db;
+create database qcard_furry_friends_db;
 
-use furry_friends_db;
+use qcard_furryfriends_db;
 
 create table if not exists pet
 (

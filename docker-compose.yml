@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: mysql:9.0.1
+    container_name: mysqlcontainer2
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: qcard_furryfriends_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3307"
+    volumes:
+      - ./mysql_data:/var/lib/mysql

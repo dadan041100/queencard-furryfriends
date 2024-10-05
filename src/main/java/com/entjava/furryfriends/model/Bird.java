@@ -1,13 +1,16 @@
 package com.entjava.furryfriends.model;
 
 import jakarta.persistence.Entity;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Cat extends Pet
+public class Bird extends Pet
 {
     private String color;
-    private boolean indoor;
+    private String species;
+    private boolean flying;
+
 }
