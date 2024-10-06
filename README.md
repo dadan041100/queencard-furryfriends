@@ -89,6 +89,10 @@ git config --list
 - Connect to the data source `furry_friends_db@localhost`
 
 ## Reference:
-- This set of instruction came from Danziel Cempron, specifically on how to set-up MySQL in Docker Desktop
+- For setting up your MySQL in Docker Desktop, i would like to thank DANZIEL CEMPRON for giving out clear instructions on how to do it.
+# Check out his GitHub Profile 
+```
+https://github.com/Dnzldotexe
+```
 
   
