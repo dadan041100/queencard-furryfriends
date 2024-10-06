@@ -7,7 +7,7 @@
 - Hit Enter
 
 ## Clone this Repository
-- Open your powershell/terminal and run:
+- Open your Command Prompt/Windows Powershell and run:
     ```
     git clone [https://github.com/dadan041100/queencard-furryfriends.git]
     ```
