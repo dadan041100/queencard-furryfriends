@@ -91,7 +91,7 @@ https://www.docker.com/products/docker-desktop/
 
 ## Initialize the Schema and Data of the Project
 - Open furrydb.sql under `src/main/resources/`
-- Connect to the data source `furry_friends_db@localhost`
+- Connect to the data source `qcard_furry_friends_db@localhost`
 
 ## Reference:
 - For setting **MySQL in Docker Desktop**, i would like to thank **DANZIEL CEMPRON** for giving out clear instructions on how to do it.
