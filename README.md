@@ -1,6 +1,9 @@
 ## Open Command Prompt/Windows Powershell as Admin
 - open cmd/win ps
-- type CD and put the location of your directory where you want to clone [eg. cd C:\Users\<your username>\Documents\...]
+- type CD and put the location of your directory where you want to clone
+    ```
+  [eg. cd C:\Users\<your username>\Documents\...]
+    ```
 - Hit Enter
 
 ## Clone this Repository
