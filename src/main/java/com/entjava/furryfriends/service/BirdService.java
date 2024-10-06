@@ -16,15 +16,16 @@ public class BirdService {
     }
 
     public List<Bird> findAllBirds() {
-        return birdRepository.findAll(); // Ensure this method retrieves all birds from the database
+        return birdRepository.findAll();
     }
 
     public Bird saveBird(Bird bird) {
-        return birdRepository.save(bird); // Save bird to the database
+        return birdRepository.save(bird);
     }
 
     public void deleteBird(Long id) {
-        if (birdRepository.existsById(id)) {
+        if (birdRepository.existsById(id))
+        {
             birdRepository.deleteById(id);
         }
     }
