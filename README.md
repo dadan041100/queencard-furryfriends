@@ -6,13 +6,47 @@
     ```
 - Hit Enter
 
+## Install Git (skip this part if you have Git on your Local Machine(s)
+- Download the Git Installer, copy the link below:
+  ```
+  https://gitforwindows.org
+  ```
+- Ensure that Git PATH is properly configured so that you can run git commands on respective terminals.
+
+  # For MacOS
+  - If you are using MacOS, follow these steps:
+    Open Terminal
+    Run the command:
+    ```
+    brew install git
+    ```
+  - Or as an alternative, you can also download the Git Installer on their official website
+
+## Configuring Git using Git Bash
+### Requirements: Git 
+- Set up your username
+```
+git config --global user.name "<username>"
+```
+- Set up your E-mail
+```
+git config --global user.email "<your_email@.git.com>"
+```
+- (Optional) Checking Configurations
+To ensure the username and e-mail are added, run this command:
+```
+git config --list
+```
+
 ## Clone this Repository
-- Open your Command Prompt/Windows Powershell and run:
+- Open your Command Prompt/Windows Powershell as Administrator
+- Make sure you are on the right directory where you want to clone the repository
+- Run the command below:
     ```
     git clone [https://github.com/dadan041100/queencard-furryfriends.git]
     ```
-- Open your project in IntelliJ 
-
+- Open your project in IntelliJ
+  
 ## Set up MySQL in Docker
 ### Requirement: Docker Desktop  
 - If you do not have Docker Desktop, kindly download it and set the respective paths to ensure that it is working.
