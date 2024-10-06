@@ -7,14 +7,14 @@
 - Hit Enter
 
 ## Install Git (skip this part if you have Git on your Local Machine(s)
-- Download the Git Installer, copy the link below:
+- Download the **Git Installer**, copy the link below:
   ```
   https://gitforwindows.org
   ```
-- Ensure that Git PATH is properly configured so that you can run git commands on respective terminals.
+- Ensure that **Git PATH** is properly configured on your Local Machine so that you can run git commands on respective terminals.
 
   # For MacOS
-  - If you are using MacOS, follow these steps:
+  - If you are using **MacOS**, follow these steps:
     Open Terminal
     Run the command:
     ```
@@ -49,7 +49,12 @@ git config --list
   
 ## Set up MySQL in Docker
 ### Requirement: Docker Desktop  
-- If you do not have Docker Desktop, kindly download it and set the respective paths to ensure that it is working.
+- If you do not have **Docker Desktop**, kindly download it and set the respective paths to ensure that it is working.
+# Link
+```
+https://www.docker.com/products/docker-desktop/
+```
+- Make sure that **Docker PATH** is properly configured
 - Log-in or Register with your GitHub or Personal Account
   
 ### Open your powershell/terminal
@@ -89,7 +94,7 @@ git config --list
 - Connect to the data source `furry_friends_db@localhost`
 
 ## Reference:
-- For setting up your MySQL in Docker Desktop, i would like to thank DANZIEL CEMPRON for giving out clear instructions on how to do it.
+- For setting **MySQL in Docker Desktop**, i would like to thank **DANZIEL CEMPRON** for giving out clear instructions on how to do it.
 # Check out his GitHub Profile 
 ```
 https://github.com/Dnzldotexe
