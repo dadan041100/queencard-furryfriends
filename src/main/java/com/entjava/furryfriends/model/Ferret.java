@@ -1,14 +1,18 @@
 package com.entjava.furryfriends.model;
 
 import jakarta.persistence.Entity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
 
 @Entity
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class Ferret extends Pet
+
+public class Ferret
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String size;
     private boolean trained;
 

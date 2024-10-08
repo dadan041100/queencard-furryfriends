@@ -2,6 +2,8 @@ package com.entjava.furryfriends.controller;
 
 import com.entjava.furryfriends.model.Bird;
 import com.entjava.furryfriends.service.BirdService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -9,7 +11,7 @@ import java.util.List;
 @RequestMapping("/birds")
 public class BirdController
 {
-
+    @Autowired
     private final BirdService BirdService;
 
     public BirdController(BirdService BirdService)
@@ -26,7 +28,8 @@ public class BirdController
     @PostMapping
     public Bird createBird(@RequestBody Bird bird)
     {
-        return BirdService.saveBird(bird);
+        Bird savedBird = BirdService.saveBird(bird);
+        return ResponseEntity.ok(savedBird).getBody();
     }
 
     @DeleteMapping("/{id}")
@@ -35,4 +38,3 @@ public class BirdController
         BirdService.deleteBird(id);
     }
 }
-

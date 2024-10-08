@@ -2,6 +2,8 @@ package com.entjava.furryfriends.controller;
 
 import com.entjava.furryfriends.model.Ferret;
 import com.entjava.furryfriends.service.FerretService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.List;
 @RequestMapping("/ferrets")
 public class FerretController
 {
-
+    @Autowired
     private final FerretService FerretService;
 
     public FerretController(FerretService FerretService)
@@ -27,7 +29,8 @@ public class FerretController
     @PostMapping
     public Ferret createFerret(@RequestBody Ferret ferret)
     {
-        return FerretService.saveFerret(ferret);
+        Ferret savedFerret = FerretService.saveFerret(ferret);
+        return ResponseEntity.ok(savedFerret).getBody();
     }
 
     @DeleteMapping("/{id}")
@@ -36,4 +39,3 @@ public class FerretController
         FerretService.deleteFerret(id);
     }
 }
-
