@@ -37,3 +37,25 @@ create table if not exists dog
     on delete cascade
     );
 
+create table if not exists bird
+(
+    id      BIGINT(19)   not null
+        primary key,
+    color   VARCHAR(255) null,
+    species VARCHAR(255) null,
+    flying TINYINT(3)   null,
+    constraint bird_ibfk_1
+        foreign key (id) references pet (id)
+            on delete cascade
+);
+
+create table if not exists ferret
+(
+    id      BIGINT(19)   not null
+        primary key,
+    size   VARCHAR(255) null,
+    trained TINYINT(3)   null,
+    constraint ferret_ibfk_1
+        foreign key (id) references pet (id)
+            on delete cascade
+);

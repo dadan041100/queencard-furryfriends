@@ -162,7 +162,25 @@ CREATE TABLE `pet` (
 
 LOCK TABLES `pet` WRITE;
 /*!40000 ALTER TABLE `pet` DISABLE KEYS */;
-INSERT INTO `pet` VALUES (1,'Max',3,'DOG'),(2,'Bella',2,'DOG'),(3,'Charlie',5,'DOG'),(4,'Lucy',1,'DOG'),(5,'Cooper',4,'DOG'),(6,'Luna',2,'CAT'),(7,'Milo',3,'CAT'),(8,'Oliver',4,'CAT'),(9,'Simba',6,'CAT'),(10,'Chloe',1,'CAT');
+INSERT INTO `pet` VALUES (1,'Max',3,'DOG'),
+                         (2,'Bella',2,'DOG'),
+                         (3,'Charlie',5,'DOG'),
+                         (4,'Lucy',1,'DOG'),
+                         (5,'Cooper',4,'DOG'),
+                         (6,'Luna',2,'CAT'),
+                         (7,'Milo',3,'CAT'),
+                         (8,'Oliver',4,'CAT'),
+                         (9,'Simba',6,'CAT'),
+                         (10,'Chloe',1,'CAT'),
+                         (11,'Chocobo',3,'BIRD'),
+                         (12,'Aeris',5,'BIRD'),
+                         (13,'Haru',2,'BIRD'),
+                         (14,'Kiki',4,'BIRD'),
+                         (15,'Kycho',4,'FERRET'),
+                         (16,'Rod',3,'FERRET'),
+                         (17,'Ruru',4,'FERRET'),
+                         (18,'Coco',1,'FERRET');
+
 /*!40000 ALTER TABLE `pet` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

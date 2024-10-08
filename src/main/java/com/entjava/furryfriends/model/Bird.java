@@ -1,18 +1,15 @@
 package com.entjava.furryfriends.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.*;
+
 
 @Entity
 @Data
-
-public class Bird
+@EqualsAndHashCode(callSuper=true)
+public class Bird extends Pet
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private String color;
     private String species;
     private boolean flying;
