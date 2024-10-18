@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import org.springframework.security.core.Authentication;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/birds")
@@ -13,6 +16,8 @@ public class BirdController
 {
     @Autowired
     private final BirdService BirdService;
+    @Autowired
+    private BirdService birdService;
 
     public BirdController(BirdService BirdService)
     {
@@ -20,9 +25,15 @@ public class BirdController
     }
 
     @GetMapping
-    public List<Bird> getAllBirds()
+    public Map<String, Object> getAllBirds(Authentication authentication)
     {
-        return BirdService.findAllBirds();
+        List<Bird> birds = birdService.findAllBirds();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("user", authentication.getName());
+        response.put("birds", birds);
+
+        return response;
     }
 
     @PostMapping

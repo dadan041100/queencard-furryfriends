@@ -5,8 +5,10 @@ import com.entjava.furryfriends.service.FerretService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import org.springframework.security.core.Authentication;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/ferrets")
@@ -21,9 +23,15 @@ public class FerretController
     }
 
     @GetMapping
-    public List<Ferret> getAllFerrets()
+    public Map<String, Object> getAllFerrets(Authentication authentication)
     {
-        return FerretService.findAllFerrets();
+        List<Ferret> ferrets = FerretService.findAllFerrets();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("user", authentication.getName());
+        response.put("ferrets", ferrets);
+
+        return response;
     }
 
     @PostMapping

@@ -4,10 +4,14 @@ import com.entjava.furryfriends.model.Pet;
 import com.entjava.furryfriends.service.PetService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import org.springframework.security.core.Authentication;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/pets")
-public class PetController {
+public class PetController
+{
 
     private final PetService petService;
 
@@ -17,13 +21,20 @@ public class PetController {
     }
 
     @GetMapping
-    public List<Pet> getAllPets()
+    public Map<String, Object> getAllPets(Authentication authentication)
     {
-        return petService.findAllPets();
+        List<Pet> pets = petService.findAllPets();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("user", authentication.getName());
+        response.put("pets", pets);
+
+        return response;
     }
 
     @GetMapping("/{id}")
-    public Pet getPetById(@PathVariable Long id) {
+    public Pet getPetById(@PathVariable Long id)
+    {
         return petService.findPetById(id).orElseThrow(() -> new RuntimeException("Pet not found"));
     }
 
